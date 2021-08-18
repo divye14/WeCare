@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/app_navigation"
+    app:startDestination="@id/registrationFragment">
+
+    <fragment
+        android:id="@+id/registrationFragment"
+        android:name="com.capgemini.wecare.RegistrationFragment"
+        android:label="fragment_registration"
+        tools:layout="@layout/fragment_registration" >
+        <action
+            android:id="@+id/action_registrationFragment_to_doctorRegistrationFragment"
+            app:destination="@id/doctorRegistrationFragment" />
+        <action
+            android:id="@+id/action_registrationFragment_to_patientRegistrationFragment"
+            app:destination="@id/patientRegistrationFragment" />
+        <action
+            android:id="@+id/action_registrationFragment_to_authenticationFragment"
+            app:destination="@id/authenticationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/doctorRegistrationFragment"
+        android:name="com.capgemini.wecare.DoctorRegistrationFragment"
+        android:label="fragment_doctor_registration"
+        tools:layout="@layout/fragment_doctor_registration" >
+        <action
+            android:id="@+id/action_doctorRegistrationFragment_to_authenticationFragment"
+            app:destination="@id/authenticationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/patientRegistrationFragment"
+        android:name="com.capgemini.wecare.PatientRegistrationFragment"
+        android:label="fragment_patient_registration"
+        tools:layout="@layout/fragment_patient_registration" >
+        <action
+            android:id="@+id/action_patientRegistrationFragment_to_authenticationFragment"
+            app:destination="@id/authenticationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/authenticationFragment"
+        android:name="com.capgemini.wecare.AuthenticationFragment"
+        android:label="fragment_authentication"
+        tools:layout="@layout/fragment_authentication" />
+</navigation>
